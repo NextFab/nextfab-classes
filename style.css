@@ -34,6 +34,7 @@ h1, h2, h3 {
     -webkit-border-radius: 5px;
     -khtml-border-radius: 5px;
     border-radius: 5px;
+	clear: both;
 }
 .search-box label {
     font-weight: bold;
