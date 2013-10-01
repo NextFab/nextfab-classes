@@ -35,7 +35,8 @@ h1, h2, h3 {
     -khtml-border-radius: 5px;
     border-radius: 5px;
 	clear: both;
-}
+	}
+
 .search-box label {
     font-weight: bold;
     margin-left: 10px;
@@ -105,8 +106,10 @@ h1, h2, h3 {
 .show-info .genre {
     margin-right: 5px;
     cursor: pointer;
+
 }
 
 .row-fluid {
 	width: auto;
 	}
+
