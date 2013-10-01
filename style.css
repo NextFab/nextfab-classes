@@ -106,3 +106,7 @@ h1, h2, h3 {
     margin-right: 5px;
     cursor: pointer;
 }
+
+.row-fluid {
+	width: auto;
+	}
