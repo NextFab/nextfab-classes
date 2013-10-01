@@ -2,18 +2,96 @@
 <html>
 
   <head>
-   
+   	 <link data-require="bootstrap-css@*" data-semver="2.3.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
     <script data-require="angular.js@1.1.5" data-semver="1.1.5" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
     <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script data-require="bootstrap@2.3.2" data-semver="2.3.2" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    
+    <style type="text/css" id="mti_fontface_5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac">@font-face{
+font-family:"DIN Next W01 Black";
+src:url("http://fast.fonts.com/d/9541b817-6a02-4e7a-af21-ce24b70d9ba3.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextW01-BlackItalic";
+src:url("http://fast.fonts.com/d/4cd37f64-b230-4162-88bf-f6cccde94e4b.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DIN Next W01 Bold";
+src:url("http://fast.fonts.com/d/9949035f-6226-4080-a14a-bf7d94ffb1e1.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextW01-BoldItalic";
+src:url("http://fast.fonts.com/d/140a0a6f-f218-4071-8eb8-f2bc45ed5121.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextW01-CondensedBla";
+src:url("http://fast.fonts.com/d/5a992686-aab3-4b26-9c57-f41b0f01b6fd.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextW01-CondensedBol";
+src:url("http://fast.fonts.com/d/0c0418fe-d324-4ab2-978a-e8201c646ca1.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextW01-CondensedHea";
+src:url("http://fast.fonts.com/d/d245e531-16e5-4428-904d-d6cb987d44f9.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextW01-CondensedLig";
+src:url("http://fast.fonts.com/d/43e82893-3880-47b2-82d6-5b136f8f7477.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextW01-CondensedMed";
+src:url("http://fast.fonts.com/d/2613a064-2962-44af-ae6f-3640e06e8dc4.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextW01-CondensedReg";
+src:url("http://fast.fonts.com/d/3b15daf5-d7fb-4099-93b9-db20fd26c2fe.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextW01-CondensedUlt";
+src:url("http://fast.fonts.com/d/02c54ffd-ffe5-4a1d-baf3-6f2f329e985e.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DIN Next W01 Heavy";
+src:url("http://fast.fonts.com/d/d5c47039-3cdf-4eb9-ad4a-220e7441ec5d.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextW01-HeavyItalic";
+src:url("http://fast.fonts.com/d/0e69005b-f8b8-4d6d-999f-865965bdfd21.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DIN Next W01 Italic";
+src:url("http://fast.fonts.com/d/c5635d60-91fa-4e4b-8a51-41c97fc744c3.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DIN Next W01 Light";
+src:url("http://fast.fonts.com/d/bc176270-17fa-4c78-a343-9fe52824e501.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextW01-LightItalic";
+src:url("http://fast.fonts.com/d/e1c997f3-fb27-4289-abc6-5ef059e51723.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DIN Next W01 Medium";
+src:url("http://fast.fonts.com/d/4bf0ead4-e61b-4992-832b-6ff05828d99f.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextW01-MediumItalic";
+src:url("http://fast.fonts.com/d/00ebffbe-b1fe-4913-b8d8-50f0ba8af480.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DIN Next W01 Regular";
+src:url("http://fast.fonts.com/d/c5a7f89e-15b6-49a9-8259-5ea665e72191.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DIN Next W02 Medium";
+src:url("http://fast.fonts.com/d/97b0cc11-9afb-4a2f-93b7-e1b5c40d80a6.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextRoundedLTW01-Bol";
+src:url("http://fast.fonts.com/d/52382db1-3de6-473e-b9c0-3cb5e70e80a2.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextRoundedLTW01-Lig";
+src:url("http://fast.fonts.com/d/a97ce140-d04b-430b-a41b-56ea0794c997.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextRoundedLTW01-Med";
+src:url("http://fast.fonts.com/d/97252acf-16d3-480c-8269-89ea815e4179.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextRoundedLTW01-Reg";
+src:url("http://fast.fonts.com/d/b03c5cd2-c6ad-4764-9cab-bf6211f181a7.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextLTW01-UltraLight 706122";
+src:url("http://fast.fonts.com/d/04c0d1f1-0fdf-4866-a034-1b5d1ba44a94.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+@font-face{
+font-family:"DINNextLTW01-UltraLight 706125";
+src:url("http://fast.fonts.com/d/11143434-96a9-4740-a138-f16d49263f2f.woff?d44f19a684109620e484157aa790e81873dc51ad974425e651f9d4e5e2beef410bca815abc498b6a0b15191918d41312fc13506c0b1f4e579e8efc10480f966aa9688cf80348e0e56133f82ffacee385a77e460e079fc000351c2a85b851ce2f7839317820402c7d46cf071a525b082f286dd03a78745dfd778bfd219d7f54e600ae&projectId=5e3a3416-8e09-4aef-a4b5-8c981dd3d6ac") format('woff');}
+</style>
     <!-- INCLUDE APPLICATION SPECIFIC CSS AND JAVASCRIPT -->
   <script type="text/javascript" src="app.js"></script>
 	<script type="text/javascript" src="mainController.js"></script>
     
     <link href="style.css" rel="stylesheet" />
 	<link href="nfs-homepage-style.css" rel="stylesheet" />
-	 <link data-require="bootstrap-css@*" data-semver="2.3.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+
   </head>
 
   <body>
