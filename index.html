@@ -72,10 +72,11 @@
     </div><!--end header -->
 </div><!--end header wrapper -->
 
- 
         <div class="results-top"></div>
         <div class="results-container">
-
+ <div class="page-heading">
+<h1> NextFab Studio Classes</h1>
+</div>
      
 		<div class="search-box row-fluid form-inline">
 			<label>Search: </label>
@@ -89,6 +90,7 @@
 
 <a href="http://schedule.nextfabstudio.com/schedule/NextFab_Studio/Classes"><div id="classes_cal"><h2 class="icon">Calendar View</h2></div></a>
 		</div>
+
         
             <ul class="classes-list">       
 <li ng-repeat="classes in results | filter:{gsx$description.$t:filterText} | isCategory:categoryFilter">

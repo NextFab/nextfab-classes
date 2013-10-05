@@ -17,6 +17,21 @@ h1, h2, h3 {
     color: #333;
 }
 
+.page-heading {
+	
+	background-color: #83be41;
+	color: #fff;
+padding: 1px 15px 1px 15px;
+margin-bottom: 10px;
+background-image: url('http://nextfabstudio.com/images/stripe-dotted-60.png');
+font-size: 36px;
+-webkit-border-radius: 4px;
+border-bottom-left-radius: 4px;
+border-top-left-radius: 4px;
+border-bottom-right-radius: 4px;
+border-top-right-radius: 4px;
+}
+
 ul {
 list-style: none;
 }
