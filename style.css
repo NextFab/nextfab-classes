@@ -1,10 +1,6 @@
 /* Styles go here */
 
 @import url(http://fonts.googleapis.com/css?family=Archivo+Narrow);
-@import url(http://nextfabstudio.com/fonts/DINWebPro-Bold.woff);
-@import url(http://nextfabstudio.com/fonts/DINWebPro-CondMedium.woff);
-@import url(http://nextfabstudio.com/fonts/DINWebPro.woff);
-
 body {
    background: url("images/stripe-dotted-60.png") repeat scroll 0 0 #D1E7F3;
 }
@@ -400,9 +396,7 @@ font-family: Roboto Condensed;
     -webkit-border-radius: 5px;
     -khtml-border-radius: 5px;
     border-radius: 5px;
-	clear: both;
-	}
-
+}
 .search-box label {
     font-weight: bold;
     margin-left: 10px;
@@ -493,10 +487,4 @@ padding-left: 64px; /* Or size of icon + spacing */
 .show-info .genre {
     margin-right: 5px;
     cursor: pointer;
-
 }
-
-.container {
-	width: auto;
-	}
-
