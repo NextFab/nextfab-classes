@@ -116,14 +116,14 @@
                 <li><strong>Non-Member Price:</strong> {{classes.gsx$nprice.$t}} </li>
                 <li><strong>Available Seats:</strong> {{classes.gsx$spots.$t}} </li>
                 <li><strong><a href = "{{classes.gsx$url.$t}}">Sign up now</a></strong></li>
-                <li><strong>Category:</strong><span class="label label-inverse category" ng-repeat="category in classes.category" ng-click="setCategoryFilter(category)"> {{classes.gsx$category.$t}} </span></li>
+                <li><strong>Category:</strong><a href=""><span class="label label-inverse category" ng-repeat="category in classes.category" ng-click="setCategoryFilter(classes.gsx$category.$t)"> {{classes.gsx$category.$t}} </span></a></li>
             </ul>
         </div>
     </div>
 </li>
 </ul>
 
-<p ng-show="(todos | filter:query).length==0">There are no todos for given query</p>
+<p ng-show="(todos | filter:query).length==0">There are no result for given query</p>
         </div>
         <div class="results-bottom"></div>
 	</div>

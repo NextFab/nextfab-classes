@@ -38,7 +38,7 @@ app.controller("mainController", function($scope, $http){
                         if (exists === false) {
                             $scope.availableCategories.push(category);
                         }
-                        console.log(classes);
+                        //console.log(classes);
                        
                     }); 
                     
@@ -71,17 +71,16 @@ app.filter('isCategory', function() {
             var out = [];
             for (var a = 0; a < input.length; a++){
              eachCategory = input[a].gsx$category.$t;
-               // for (var b = 0; b < eachCategory.length; b++){
 
                     if(input[a].gsx$category.$t == category) {
                       
                        out.push(input[a]);
-                         
-                   // }
+
                 }
             }
             return out;
         }
     };
 });
+
 
