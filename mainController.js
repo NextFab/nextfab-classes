@@ -28,7 +28,7 @@ app.controller("mainController", function($scope, $http){
                     angular.forEach(classes.gsx$category, function(category, index){
                     
                     
-                        //Only add to the availableGenres array if it doesn't already exist
+                        //Only add to the availableCat array if it doesn't already exist
                         var exists = false;
                         angular.forEach($scope.availableCategories, function(avCat, index){
                             if (avCat == category) {
@@ -56,7 +56,7 @@ app.controller("mainController", function($scope, $http){
     $scope.categoryFilter = category;
    
   };     
- console.log($scope.categoryFilter);
+
 });
 
 
