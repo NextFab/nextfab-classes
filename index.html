@@ -1,7 +1,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns:ng="http://angularjs.org">
+<html xmlns="xmlns="http://www.w3.org/1999/xhtml">
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta content="utf-8" http-equiv="encoding"/>
@@ -16,6 +16,7 @@
     
     <link href="style.css" rel="stylesheet" />
   </head>
+  <body>
   <script type="text/javascript">
   WebFontConfig = {
     google: { families: [ 'Oswald:400,300:latin', 'Roboto+Condensed:400,300,700:latin' ] }
@@ -29,8 +30,6 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(wf, s);
   })(); </script>
-
-  <body>
 
 
   <div class="container" ng-app="nfsClassesApp" ng-controller="mainController" ng-init="init()">
@@ -83,7 +82,7 @@
      
 		<div class="search-box row-fluid form-inline">
 			<label>Search: </label>
-<input type="text" ng-model="filterText" placeholder="Enter text here">
+<input type="text" ng-model="filterText" placeholder="Enter text here"/>
 
 
 <label>Category: </label>
@@ -126,10 +125,8 @@
 </li>
 </ul>
 
-<p ng-show="(todos | filter:query).length==0">There are no result for given query</p>
         </div>
         <div class="results-bottom"></div>
 	</div>
   </body>
-
 </html>
