@@ -13,7 +13,7 @@ app.controller("mainController", function($scope, $http){
     
     
     
-    $http.jsonp(url + '&callback=JSON_CALLBACK', {method: 'GET', headers: {'Content-Type': 'application/json'}}).success(function(data) {
+    $http.jsonp(url + '&callback=JSON_CALLBACK', {headers: {'MEME-Type': 'application/javascript'}}).success(function(data) {
         
         angular.forEach(data, function(value, index){
                 angular.forEach(value.entry, function(classes, index){
