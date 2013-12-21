@@ -4,6 +4,7 @@ app.controller("mainController", function($scope, $http){
     $scope.availableCategories = [];
     $scope.categoryFilter = null;
    
+   
     $scope.init = function() {
     
     var sheet = "od6"; //upcoming classes
@@ -12,21 +13,15 @@ app.controller("mainController", function($scope, $http){
     
     
     
-    $http.jsonp(url + '&callback=JSON_CALLBACK').success(function(data) {
+    $http.jsonp(url + '&callback=JSON_CALLBACK', {method: 'GET', headers: {'Content-Type': 'application/json'}}).success(function(data) {
         
         angular.forEach(data, function(value, index){
-                //The API stores the full date separately from each episode. Save it so we can use it later
-                //var start = value.gsx$start.$t;
-                //For each episodes, add it to the results array
                 angular.forEach(value.entry, function(classes, index){
                     //Create a date string from the timestamp so we can filter on it based on user text input
                     
                     $scope.results.push(classes);
-                    
-                    
        //Loop through each category
                     angular.forEach(classes.gsx$category, function(category, index){
-                    
                     
                         //Only add to the availableCat array if it doesn't already exist
                         var exists = false;
