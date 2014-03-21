@@ -92,12 +92,15 @@
     <option value="">All</option>
 </select>
 
+<label for="publiconly">Only Show Public Classes</label>
+<input ng-model="publiconly" id="publiconly" type="checkbox">
+
 <a href="http://schedule.nextfabstudio.com/schedule/NextFab_Studio/Classes"><div id="classes_cal"><h2 class="icon">Calendar View</h2></div></a>
 		</div>
 
         
             <ul class="classes-list">       
-<li ng-repeat="classes in results | filter:{gsx$description.$t:filterText} | isCategory:categoryFilter">
+<li ng-repeat="classes in results | filter:{gsx$description.$t:filterText} | isCategory:categoryFilter | filterPublicClasses:publiconly">
     <div class="row-fluid">
         <div class="span3">
             <img src= "{{classes.gsx$image.$t}}"/>
