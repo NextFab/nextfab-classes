@@ -79,3 +79,18 @@ app.filter('isCategory', function() {
 });
 
 
+/* When the 'Only Show Public Classes' box is checked, do not show any classes that have a non-member price of "N/A" */
+app.filter('filterPublicClasses', function() {
+    return function(input, checked) {
+        if (!checked)
+            return input;
+        else {
+            var out = [];
+            for (var i = 0; i < input.length; i++) {
+                if (input[i].gsx$nprice.$t != "N/A")
+                    out.push(input[i]);
+            }
+            return out;
+        }
+    };
+});
