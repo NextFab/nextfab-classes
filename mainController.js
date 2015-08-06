@@ -2,7 +2,9 @@ app.controller("mainController", function($scope, $http){
     $scope.results = [];
     $scope.filterText = null;
     $scope.availableCategories = [];
+    $scope.availableLocations = [];
     $scope.categoryFilter = null;
+    $scope.locationFilter = null;
    
    
     $scope.init = function() {
@@ -20,8 +22,9 @@ app.controller("mainController", function($scope, $http){
                     //Create a date string from the timestamp so we can filter on it based on user text input
                     
                     $scope.results.push(classes);
-       //Loop through each category
-                    angular.forEach(classes.gsx$category, function(category, index){
+
+                    //Loop through each category
+                    angular.forEach(classes.gsx$category, function(category, index) {
                     
                         //Only add to the availableCat array if it doesn't already exist
                         var exists = false;
@@ -32,6 +35,23 @@ app.controller("mainController", function($scope, $http){
                         });
                         if (exists === false) {
                             $scope.availableCategories.push(category);
+                        }
+                        //console.log(classes);
+                       
+                    }); 
+                    
+                    //Loop through each location
+                    angular.forEach(classes.gsx$location, function(location, index) {
+                    
+                        //Only add to the availableCat array if it doesn't already exist
+                        var exists = false;
+                        angular.forEach($scope.availableLocations, function(avCat, index){
+                            if (avCat == location) {
+                                exists = true;
+                            }
+                        });
+                        if (exists === false) {
+                            $scope.availableLocations.push(location);
                         }
                         //console.log(classes);
                        
@@ -48,9 +68,12 @@ app.controller("mainController", function($scope, $http){
     };
     
     $scope.setCategoryFilter = function(category) {
-    $scope.categoryFilter = category;
-   
-  };     
+      $scope.categoryFilter = category;
+    };     
+
+    $scope.setLocationFilter = function(location) {
+      $scope.locationFilter = location;
+    };     
 
 });
 
@@ -72,6 +95,23 @@ app.filter('isCategory', function() {
                        out.push(input[a]);
 
                 }
+            }
+            return out;
+        }
+    };
+});
+
+app.filter('isLocation', function() {
+    return function(input, location) {
+        if (typeof location == 'undefined' || location == null) {
+            return input;
+        } else {
+            var out = [];
+            for (var a = 0; a < input.length; a++){
+              eachLocation = input[a].gsx$location.$t;
+              if(input[a].gsx$location.$t == location) {
+                out.push(input[a]);
+              }
             }
             return out;
         }

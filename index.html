@@ -102,6 +102,11 @@
     <option value="">All</option>
 </select>
 
+<label>Location: </label>
+<select ng-model="locationFilter" ng-options="label for label in availableLocations">
+    <option value="">All</option>
+</select>
+
 <label for="publiconly">Only Show Public Classes</label>
 <input ng-model="publiconly" id="publiconly" type="checkbox">
 
@@ -110,7 +115,7 @@
 
         
             <ul class="classes-list">       
-<li ng-repeat="classes in results | filter:{gsx$description.$t:filterText} | isCategory:categoryFilter | filterPublicClasses:publiconly">
+<li ng-repeat="classes in results | filter:{gsx$description.$t:filterText} | isCategory:categoryFilter | isLocation:locationFilter | filterPublicClasses:publiconly">
     <div class="row-fluid">
         <div class="span3">
             <img src= "{{classes.gsx$image.$t}}"/>
@@ -127,7 +132,8 @@
         </div>
         <div class="span3">
             <ul class="show-info">
-            	<li><strong>Location:</strong> {{classes.gsx$location.$t}} </li>
+                  <!-- <li><strong>Location:</strong><a href=""><span class="label label-inverse category" ng-repeat="location in classes.location" ng-click="setLocationFilter(classes.gsx$location.$t)"> {{classes.gsx$location.$t}} </span></a></li> -->
+                <li><strong>Location:</strong> {{classes.gsx$location.$t}} </li>
                 <li><strong>Start:</strong> {{classes.gsx$start.$t}} </li>
                 <li><strong>End:</strong> {{classes.gsx$finish.$t}} </li>
                 <li><strong>Member Price:</strong> {{classes.gsx$price.$t}} </li>
