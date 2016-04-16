@@ -25,7 +25,7 @@ app.controller("mainController", function($scope, $http){
                     var startDateTime = new Date(classes.gsx$start.$t);
                     classes.gsx$start.$t  = startDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
                     var endDateTime = new Date(classes.gsx$finish.$t);
-                    classes.gsx$finish.$t  = startDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
+                    classes.gsx$finish.$t  = endDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
 
                     $scope.results.push(classes);
 
