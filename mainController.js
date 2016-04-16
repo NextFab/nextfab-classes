@@ -14,7 +14,6 @@ app.controller("mainController", function($scope, $http){
     var url = "http://spreadsheets.google.com/feeds/list/" + key + "/" + sheet + "/public/values?alt=json-in-script";
     
     
-    
     $http.jsonp(url + '&callback=JSON_CALLBACK', {headers: {'MEME-Type': 'application/javascript'}}).success(function(data) {
         
         angular.forEach(data, function(value, index){
@@ -22,9 +21,16 @@ app.controller("mainController", function($scope, $http){
                     //Create a date string from the timestamp so we can filter on it based on user text input
                     
 
+                    var dateRE = /([01]+[0-9][/][0-3]+[0-9][/][0-9]* )[^0-9]*([0-9]*:[0-9]* [apAP]m)/i;
                     var startDateTime = new Date(classes.gsx$start.$t);
                     classes.gsx$start.$t  = startDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
-                    var endDateTime = new Date(classes.gsx$finish.$t);
+
+                    var endDateTimeMatch = dateRE.exec(classes.gsx$finish.$t);
+                    if(endDateTimeMatch && endDateTimeMatch[1] && endDateTimeMatch[2]) {
+                        var endDateTime = new Date(endDateTimeMatch[1] + endDateTimeMatch[2]);
+                        classes.gsx$finish.$t = endDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
+                    }
+
                     //classes.gsx$finish.$t  = endDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
 
                     $scope.results.push(classes);
