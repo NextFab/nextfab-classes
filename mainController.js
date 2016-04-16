@@ -21,6 +21,12 @@ app.controller("mainController", function($scope, $http){
                 angular.forEach(value.entry, function(classes, index){
                     //Create a date string from the timestamp so we can filter on it based on user text input
                     
+
+                    var startDateTime = new Date(classes.gsx$start.$t);
+                    classes.gsx$start.$t  = startDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
+                    var endDateTime = new Date(classes.gsx$finish.$t);
+                    classes.gsx$finish.$t  = startDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
+
                     $scope.results.push(classes);
 
                     //Loop through each category
