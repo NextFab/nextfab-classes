@@ -12,11 +12,12 @@ app.controller("mainController", function($scope, $http){
     var sheet = "od6"; //upcoming classes
     var key = "0AhVWrVLsk5a5dDJyaW1LMXFEVk1UY0FPVlBVcHd1bGc";
     var url = "http://spreadsheets.google.com/feeds/list/" + key + "/" + sheet + "/public/values?alt=json-in-script";
+    // http://spreadsheets.google.com/feeds/list/0AhVWrVLsk5a5dDJyaW1LMXFEVk1UY0FPVlBVcHd1bGc/od6/public/values?alt=json-in-script
     
     
     $http.jsonp(url + '&callback=JSON_CALLBACK', {headers: {'MEME-Type': 'application/javascript'}}).success(function(data) {
         
-        angular.forEach(data, function(value, index){
+        angular.forEach(data, function(value, outerIndex){
                 angular.forEach(value.entry, function(classes, index){
                     //Create a date string from the timestamp so we can filter on it based on user text input
                     
