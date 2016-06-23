@@ -27,9 +27,9 @@ app.controller("mainController", function($scope, $http){
         var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
         formatted += days[aDate.getDay()];
         formatted += ", ";
-        formatted += zExt(aDate.getMonth());
+        formatted += zExt(aDate.getMonth() + 1);
         formatted += "/";
-        formatted += zExt(aDate.getDay());
+        formatted += zExt(aDate.getDate());
         formatted += "/";
         formatted += aDate.getFullYear();
         formatted += " ";
@@ -67,7 +67,7 @@ app.controller("mainController", function($scope, $http){
 
                     var dateRE = /([01]+[0-9][/][0-3]+[0-9][/][0-9]* )[^0-9]*([0-9]*:[0-9]* [apAP]m)/i;
                     var startDateTime = new Date(classes.gsx$start.$t);
-                    classes.gsx$start.$t  = formatDate(startDateTime) + "  " + startDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
+                    classes.gsx$start.$t  = formatDate(startDateTime); // + "  " + startDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
 
                     var endDateTimeMatch = dateRE.exec(classes.gsx$finish.$t);
                     if(endDateTimeMatch && endDateTimeMatch[1] && endDateTimeMatch[2]) {
