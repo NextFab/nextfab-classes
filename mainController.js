@@ -32,6 +32,7 @@ app.controller("mainController", function($scope, $http){
         formatted += zExt(aDate.getDay());
         formatted += "/";
         formatted += aDate.getFullYear();
+        formatted += " ";
 
         var hour = aDate.getHours();
         var hourp1, hourp2;
@@ -50,7 +51,7 @@ app.controller("mainController", function($scope, $http){
         }
         formatted += hourp1;
         formatted += ":";
-        formatted += aDate.getMinutes();
+        formatted += zExt(aDate.getMinutes());
         formatted += " ";
         formatted += hourp2;
 
