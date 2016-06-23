@@ -72,7 +72,7 @@ app.controller("mainController", function($scope, $http){
                     var endDateTimeMatch = dateRE.exec(classes.gsx$finish.$t);
                     if(endDateTimeMatch && endDateTimeMatch[1] && endDateTimeMatch[2]) {
                         var endDateTime = new Date(endDateTimeMatch[1] + endDateTimeMatch[2]);
-                        classes.gsx$finish.$t = endDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
+                        classes.gsx$finish.$t = formatDate(endDateTime); // endDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
                     }
 
                     //classes.gsx$finish.$t  = endDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
