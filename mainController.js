@@ -14,7 +14,49 @@ app.controller("mainController", function($scope, $http){
     var url = "http://spreadsheets.google.com/feeds/list/" + key + "/" + sheet + "/public/values?alt=json-in-script";
     // http://spreadsheets.google.com/feeds/list/0AhVWrVLsk5a5dDJyaW1LMXFEVk1UY0FPVlBVcHd1bGc/od6/public/values?alt=json-in-script
     
-    
+    var formatDate = function(aDate) {
+        var zExt = function(x) {
+            if(x < 10) {
+                return "0" + x;
+            } else {
+                return "" + x;
+            }
+        };
+        // E.g. Thu, 06/23/2016, 6:00 PM
+        var formatted = "";
+        var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        formatted += days[aDate.getDay()];
+        formatted += ", ";
+        formatted += zExt(aDate.getMonth());
+        formatted += "/";
+        formatted += zExt(aDate.getDay());
+        formatted += "/";
+        formatted += aDate.getFullYear();
+
+        var hour = aDate.getHours();
+        var hourp1, hourp2;
+        if(0 == hour) {
+            hourp1 = 12;
+            hourp2 = "AM";
+        } else if(hour < 12) {
+            hourp1 = hour;
+            hourp2 = "AM";
+        } else if(12 == hour) {
+            hourp1 = 12;
+            hourp2 = "PM";
+        } else {
+            hourp1 = hour - 12;
+            hourp2 = "PM";
+        }
+        formatted += hourp1;
+        formatted += ":";
+        formatted += aDate.getMinutes();
+        formatted += " ";
+        formatted += hourp2;
+
+        return formatted;
+    };
+
     $http.jsonp(url + '&callback=JSON_CALLBACK', {headers: {'MEME-Type': 'application/javascript'}}).success(function(data) {
         
         angular.forEach(data, function(value, outerIndex){
@@ -24,7 +66,7 @@ app.controller("mainController", function($scope, $http){
 
                     var dateRE = /([01]+[0-9][/][0-3]+[0-9][/][0-9]* )[^0-9]*([0-9]*:[0-9]* [apAP]m)/i;
                     var startDateTime = new Date(classes.gsx$start.$t);
-                    classes.gsx$start.$t  = startDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
+                    classes.gsx$start.$t  = formatDate(startDateTime); // startDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
 
                     var endDateTimeMatch = dateRE.exec(classes.gsx$finish.$t);
                     if(endDateTimeMatch && endDateTimeMatch[1] && endDateTimeMatch[2]) {
