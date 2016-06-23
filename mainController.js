@@ -54,7 +54,6 @@ app.controller("mainController", function($scope, $http){
         formatted += zExt(aDate.getMinutes());
         formatted += " ";
         formatted += hourp2;
-        formatted += " |";
 
         return formatted;
     };
