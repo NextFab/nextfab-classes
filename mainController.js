@@ -54,6 +54,7 @@ app.controller("mainController", function($scope, $http){
         formatted += zExt(aDate.getMinutes());
         formatted += " ";
         formatted += hourp2;
+        formatted += " |";
 
         return formatted;
     };
@@ -66,12 +67,12 @@ app.controller("mainController", function($scope, $http){
                     
 
                     var dateRE = /([01]+[0-9][/][0-3]+[0-9][/][0-9]* )[^0-9]*([0-9]*:[0-9]* [apAP]m)/i;
-                    var startDateTime = new Date(classes.gsx$start.$t);
+                    var startDateTime = new Date(classes.gsx$start.$t.replace(/-/g, '/'));
                     classes.gsx$start.$t  = formatDate(startDateTime); // + "  " + startDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
 
                     var endDateTimeMatch = dateRE.exec(classes.gsx$finish.$t);
                     if(endDateTimeMatch && endDateTimeMatch[1] && endDateTimeMatch[2]) {
-                        var endDateTime = new Date(endDateTimeMatch[1] + endDateTimeMatch[2]);
+                        var endDateTime = new Date((endDateTimeMatch[1] + endDateTimeMatch[2]).replace(/-/g, '/'));
                         classes.gsx$finish.$t = formatDate(endDateTime); // endDateTime.toLocaleTimeString([], {month: "2-digit", day: "2-digit", year: "numeric", weekday: "short", hour: "numeric", minute: "numeric"});
                     }
 
