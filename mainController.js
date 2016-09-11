@@ -5,6 +5,21 @@ app.controller("mainController", function($scope, $http){
     $scope.availableLocations = [];
     $scope.categoryFilter = null;
     $scope.locationFilter = null;
+
+    $scope.filterFunc = (function($scope, aclass) {
+        if(null === $scope.filterText || undefined === $scope.filterText) {
+            return true;
+        }
+        var regex = new RegExp($scope.filterText,"i");
+        if(aclass.gsx$description.$t.search(regex) >= 0) {
+            return true;
+        }
+        if(aclass.gsx$title.$t.search(regex) >= 0) {
+            return true;
+        }
+
+        return false;
+    }).bind(this, $scope);
    
    
     $scope.init = function() {

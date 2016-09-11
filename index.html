@@ -113,7 +113,7 @@
 		</div>
         
             <ul class="classes-list">       
-<li ng-repeat="classes in results | filter:{gsx$description.$t:filterText} | isCategory:categoryFilter | isLocation:locationFilter | filterPublicClasses:publiconly">
+<li ng-repeat="classes in results | filter:filterFunc | isCategory:categoryFilter | isLocation:locationFilter | filterPublicClasses:publiconly">
     <div class="row-fluid">
         <div class="span3">
             <img src= "{{classes.gsx$image.$t}}"/>
