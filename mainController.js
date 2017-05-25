@@ -24,10 +24,26 @@ app.controller("mainController", function($scope, $http){
    
     $scope.init = function() {
     
+    var v4 = false;
     var sheet = "od6"; //upcoming classes
-    var key = "0AhVWrVLsk5a5dDJyaW1LMXFEVk1UY0FPVlBVcHd1bGc";
-    var url = "http://spreadsheets.google.com/feeds/list/" + key + "/" + sheet + "/public/values?alt=json-in-script";
-    // http://spreadsheets.google.com/feeds/list/0AhVWrVLsk5a5dDJyaW1LMXFEVk1UY0FPVlBVcHd1bGc/od6/public/values?alt=json-in-script
+    var key;
+    //var key = "0AhVWrVLsk5a5dDJyaW1LMXFEVk1UY0FPVlBVcHd1bGc";
+    key = "1Q1B54lhQil06F-mmgdDLDKpbpKyG4qjbpxOzPyUnYXQ"; // copy of Suppersaas.  From URL.
+    //key = "MDqx28iL5BaPt9I_tSJNeZr0BRp9-Qqbg"; // from script file properties -- just a test.
+
+    //var key = "1hbiitNx0bCaxZQ1y6glB3sD5TXsxguXX3UWV-x4_uIs";
+    // original:
+    var url;
+    if(v4) {
+        url = "https://sheets.googleapis.com/v4/spreadsheets/" + key + "/values/Upcoming"; // v4
+    } else {
+        url = "http://spreadsheets.google.com/feeds/list/" + key + "/" + sheet + "/public/values?alt=json-in-script";
+    }
+
+    // AML test sheet:
+    //var key = "1rbR7zqXwn0B6_EiTPd8Bc0y-UybkS-lbW9JXLJ13Iak";
+
+    // OLD COMMENT http://spreadsheets.google.com/feeds/list/0AhVWrVLsk5a5dDJyaW1LMXFEVk1UY0FPVlBVcHd1bGc/od6/public/values?alt=json-in-script
     
     var formatDate = function(aDate) {
         var zExt = function(x) {
@@ -73,6 +89,18 @@ app.controller("mainController", function($scope, $http){
         return formatted;
     };
 
+    if(v4) {
+    $http({
+        method: "GET",
+        url: url
+    }).then(function successCallback(response) {
+        console.log("success");
+    }, function errorCallback(response) {
+        console.log("failure");
+    });
+
+    }
+    if(!v4) {
     $http.jsonp(url + '&callback=JSON_CALLBACK', {headers: {'MEME-Type': 'application/javascript'}}).success(function(data) {
         
         angular.forEach(data, function(value, outerIndex){
@@ -133,9 +161,9 @@ app.controller("mainController", function($scope, $http){
             });
             
         }).error(function(error) {
- 
+            console.log("spreadsheet error");
         });
-
+}
     };
     
     $scope.setCategoryFilter = function(category) {
